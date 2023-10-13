@@ -4,7 +4,7 @@ import java.util.Scanner; // для ввода данных с консоли
 
 public class Prime {
     public static boolean isSimple(long num) {
-        for (int i = 2; i <= (num/2); ++i) {
+        for (long i = 2; i <= (num/2); ++i) {
             if (num % i == 0) {
                 return false;
             }
@@ -25,17 +25,16 @@ public class Prime {
             long checkOne = number - 2;
             long checkTwo = number + 2;
             boolean simpleOne = false;
-            if (checkOne >= 2){
+            if (checkOne >= 2) {
                 simpleOne = isSimple(checkOne);
             }
             boolean simpleTwo = isSimple(checkTwo);
-
-            if (simpleOne && simpleTwo){
+            if (simpleOne && simpleTwo) {
                 System.out.printf("%d является числом-близнецом в паре с %d \n", number, checkOne);
                 System.out.printf("%d является числом-близнецом в паре с %d \n", number, checkTwo);
-            } else if (simpleOne){
+            } else if (simpleOne) {
                 System.out.printf("%d является числом-близнецом в паре с %d \n", number, checkOne);
-            } else if (simpleTwo){
+            } else if (simpleTwo) {
                 System.out.printf("%d является числом-близнецом в паре с %d \n", number, checkTwo);
             } else {
                 System.out.printf("%d не является числом-близнецом \n", number);
