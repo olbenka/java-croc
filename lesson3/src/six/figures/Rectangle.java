@@ -26,6 +26,7 @@ public class Rectangle extends Figure implements Movable {
         return "Rectangle (" + x1 + ", " + y1 + "), (" + x2 + ", " + y2 + ")";
     }
 
+    @Override
     public void move(int dx, int dy){
         x1 += dx;
         y1 += dy;

@@ -8,6 +8,10 @@ public class Annotation {
         return figure;
     }
 
+    public void setFigure(Figure figure) {
+        this.figure = figure;
+    }
+
     public String getDescription() {
         return description;
     }

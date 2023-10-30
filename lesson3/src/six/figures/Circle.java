@@ -24,6 +24,7 @@ public class Circle extends Figure implements Movable {
         return "Circle (" + x0 + ", " + y0 + "), " + radius;
     }
 
+    @Override
     public void move(int dx, int dy){
         x0 += dx;
         y0 += dy;
