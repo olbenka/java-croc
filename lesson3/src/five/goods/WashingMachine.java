@@ -9,9 +9,16 @@ public class WashingMachine extends Goods {
     private boolean hasDryer;
 
     public WashingMachine(String name, double price, String description,
-                          int weight, Dimensions dimensions, int power,
+                          int weight, Dimensions dimensions, int power, boolean isImport,
                            ImportGoods data, boolean hasDryer) {
-        super(name, price, description, weight, dimensions, power, data);
+        super(name, price, description, weight, dimensions, power, isImport, data);
+        this.hasDryer = hasDryer;
+    }
+
+    public WashingMachine(String name, double price, String description,
+                          int weight, Dimensions dimensions, int power, boolean isImport,
+                          boolean hasDryer) {
+        super(name, price, description, weight, dimensions, power, isImport);
         this.hasDryer = hasDryer;
     }
 
@@ -23,8 +30,10 @@ public class WashingMachine extends Goods {
         this.hasDryer = hasDryer;
     }
 
-    public void printInfo() {
-        super.printInfo();
-        System.out.println("Наличие сушилки: " + (hasDryer ? "Да" : "Нет"));
+    @Override
+    public String toString() {
+        return (super.toString() +
+                "Наличие сушилки: " + (hasDryer ? "Да" : "Нет") + '\n');
     }
+
 }

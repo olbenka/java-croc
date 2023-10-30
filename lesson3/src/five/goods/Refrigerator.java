@@ -10,9 +10,17 @@ public class Refrigerator extends Goods {
     private int freezerTemperature;
 
     public Refrigerator(String name, double price, String description,
-                        int weight, Dimensions dimensions, int power,
+                        int weight, Dimensions dimensions, int power, boolean isImport,
                          ImportGoods data, boolean hasFreezer, int freezerTemperature) {
-        super(name, price, description, weight, dimensions, power, data);
+        super(name, price, description, weight, dimensions, power, isImport, data);
+        this.hasFreezer = hasFreezer;
+        this.freezerTemperature = freezerTemperature;
+    }
+
+    public Refrigerator(String name, double price, String description, int weight,
+                        Dimensions dimensions, int power, boolean isImport,
+                        boolean hasFreezer, int freezerTemperature) {
+        super(name, price, description, weight, dimensions, power, isImport);
         this.hasFreezer = hasFreezer;
         this.freezerTemperature = freezerTemperature;
     }
@@ -33,11 +41,12 @@ public class Refrigerator extends Goods {
         this.freezerTemperature = freezerTemperature;
     }
 
-    public void printInfo() {
-        super.printInfo();
-        System.out.println("Наличие морозильной камеры: " + (hasFreezer ? "Да" : "Нет"));
-        if (hasFreezer) {
-            System.out.println("Температура морозильной камеры: " + freezerTemperature + "°C");
-        }
+    @Override
+    public String toString() {
+        String str = "Температура морозильной камеры: " + freezerTemperature + "°C" + '\n';
+        return (super.toString() +
+                "Наличие морозильной камеры: " + (hasFreezer ? "Да" : "Нет") + '\n' +
+                (hasFreezer ? str : '\n'));
     }
 }
+

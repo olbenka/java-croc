@@ -9,9 +9,15 @@ public class Stove extends Goods {
     private String type;
 
     public Stove(String name, double price, String description,
-                 int weight, Dimensions dimensions, int power,
+                 int weight, Dimensions dimensions, int power, boolean isImport,
                  ImportGoods data, String type) {
-        super(name, price, description, weight, dimensions, power, data);
+        super(name, price, description, weight, dimensions, power, isImport, data);
+        this.type = type;
+    }
+    public Stove(String name, double price, String description,
+                 int weight, Dimensions dimensions, int power, boolean isImport,
+                 String type) {
+        super(name, price, description, weight, dimensions, power, isImport);
         this.type = type;
     }
 
@@ -23,8 +29,8 @@ public class Stove extends Goods {
         this.type = type;
     }
 
-    public void printInfo() {
-        super.printInfo();
-        System.out.println("Тип плиты: " + type);
+    @Override
+    public String toString() {
+        return (super.toString() + "Тип плиты: " + type + '\n');
     }
 }

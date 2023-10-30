@@ -7,33 +7,44 @@ public class Goods {
     private int weight;
     private Dimensions dimensions;
     private int power;
+
+    private boolean isImport;
     private ImportGoods data;
 
-
     public Goods(String name, double price, String description,
-                 int weight, Dimensions dimensions,
-                 int power, ImportGoods data) {
+                 int weight, Dimensions dimensions, int power, boolean isImport) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.weight = weight;
         this.dimensions = dimensions;
         this.power = power;
+        this.isImport = isImport;
+    }
+
+    public Goods(String name, double price, String description,
+                 int weight, Dimensions dimensions,
+                 int power, boolean isImport, ImportGoods data) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.weight = weight;
+        this.dimensions = dimensions;
+        this.power = power;
+        this.isImport = isImport;
         this.data = data;
     }
 
-    public void printInfo() {
-        System.out.println("Название: " + name);
-        System.out.println("Цена (в рублях): " + price);
-        System.out.println("Описание: " + description);
-        System.out.println("Вес: " + weight + " кг");
-        System.out.println("Габариты: " + dimensions.toString());
-        System.out.println("Мощность: " + power + " Вт");
-        if (!(data.getCountry()).equals("Россия")){
-            System.out.println("Информация о гарантии импортного товара: " + data.toString());
-        } else {
-            System.out.println("Страна-производитель: " + data.getCountry());
-        }
+    @Override
+    public String toString() {
+        return  "Название: " + name + '\n' +
+                "Цена (в рублях): " + price + '\n' +
+                "Описание: " + description + '\n' +
+                "Вес: " + weight + " кг" + '\n' +
+                "Габариты: " + dimensions.toString() + '\n' +
+                "Мощность: " + power + " Вт" + '\n' +
+                (isImport ? ("Информация о гарантии импортного товара:\n" + data.toString() + '\n') :
+                        "Cтрана: Россия \n");
     }
 
     public Dimensions getDimensions() {
@@ -91,6 +102,13 @@ public class Goods {
         this.power = power;
     }
 
+    public boolean isImport() {
+        return isImport;
+    }
 
+    public void setImport(boolean anImport) {
+        isImport = anImport;
+    }
 }
+
 
