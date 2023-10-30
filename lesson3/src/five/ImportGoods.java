@@ -1,8 +1,8 @@
 package five;
 
 public class ImportGoods {
-    private String country = "Россия";
-    private boolean hasGuarantee = false;
+    private String country;
+    private boolean hasGuarantee;
 
     public ImportGoods(String country, boolean hasGuarantee) {
         this.country = country;
