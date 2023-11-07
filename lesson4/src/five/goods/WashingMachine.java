@@ -22,14 +22,6 @@ public class WashingMachine extends Goods {
         this.hasDryer = hasDryer;
     }
 
-    public boolean isHasDryer() {
-        return hasDryer;
-    }
-
-    public void setHasDryer(boolean hasDryer) {
-        this.hasDryer = hasDryer;
-    }
-
     @Override
     public String toString() {
         return (super.toString() +

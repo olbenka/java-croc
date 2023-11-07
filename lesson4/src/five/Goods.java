@@ -50,68 +50,15 @@ public class Goods {
                         "Cтрана: Россия \n");
     }
 
-    public Dimensions getDimensions() {
-        return dimensions;
-    }
-
-    public void setDimensions(Dimensions dimensions) {
-        this.dimensions = dimensions;
-    }
-
-    public ImportGoods getData() {
-        return data;
-    }
-
-    public void setData(ImportGoods data) {
-        this.data = data;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-    public int getPower() {
-        return power;
-    }
-
-    public void setPower(int power) {
-        this.power = power;
     }
 
     public boolean isImport() {
         return isImport;
     }
 
-    public void setImport(boolean anImport) {
-        isImport = anImport;
-    }
+
 }
 
 

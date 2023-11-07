@@ -9,21 +9,6 @@ public class ImportGoods {
         this.hasGuarantee = hasGuarantee;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public boolean isHasGuarantee() {
-        return hasGuarantee;
-    }
-
-    public void setHasGuarantee(boolean hasGuarantee) {
-        this.hasGuarantee = hasGuarantee;
-    }
 
     @Override
     public String toString() {

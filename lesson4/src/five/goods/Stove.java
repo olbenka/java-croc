@@ -21,14 +21,6 @@ public class Stove extends Goods {
         this.type = type;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     @Override
     public String toString() {
         return (super.toString() + "Тип плиты: " + type + '\n');

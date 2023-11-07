@@ -25,21 +25,6 @@ public class Refrigerator extends Goods {
         this.freezerTemperature = freezerTemperature;
     }
 
-    public boolean isHasFreezer() {
-        return hasFreezer;
-    }
-
-    public void setHasFreezer(boolean hasFreezer) {
-        this.hasFreezer = hasFreezer;
-    }
-
-    public int getFreezerTemperature() {
-        return freezerTemperature;
-    }
-
-    public void setFreezerTemperature(int freezerTemperature) {
-        this.freezerTemperature = freezerTemperature;
-    }
 
     @Override
     public String toString() {
