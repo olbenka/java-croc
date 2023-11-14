@@ -1,8 +1,6 @@
 package nine;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class CommentFilter implements BlackListFilter {
     @Override
@@ -17,28 +15,34 @@ public class CommentFilter implements BlackListFilter {
     }
 
     private boolean inBlackList(String comment, Set<String> blackList) {
-        for (String word : blackList) {
-            String lowerWord = word.toLowerCase();
-            if (comment.contains(lowerWord)) {
-                int index = comment.indexOf(lowerWord);
-                if (isNotCognates(comment, index, lowerWord.length())) {
-                    return true;
-                }
+        String[] commentWords = comment.split("\\s+|[.,!?;]");
+        for (String word : commentWords) {
+            if (blackList.contains(word.toLowerCase())) {
+                return true;
             }
         }
         return false;
     }
 
-    // Проверка однокоренных
-    private boolean isNotCognates(String comment, int index, int length) {
-        char symbolBefore = (index > 0) ? comment.charAt(index - 1) : ' ';
-        char symbolAfter = (index + length < comment.length()) ? comment.charAt(index + length) : ' ';
-        boolean isLetterBefore = (('a' <= symbolBefore && symbolBefore <= 'я') || ('a' <= symbolBefore && symbolBefore <= 'z'));
-        boolean isLetterAfter = (('a' <= symbolAfter && symbolAfter <= 'я') || ('a' <= symbolAfter && symbolAfter <= 'z'));
-        return !(isLetterBefore || isLetterAfter);
+    public void upgradeFilterComments(List<String> comments, Set<String> blackList) {
+        for (String comment : comments) {
+            String[] commentWords = comment.split("\\s+");
+            StringBuilder filteredComment = new StringBuilder();
+
+            for (String word : commentWords) {
+                if (blackList.contains(word.toLowerCase())) {
+                    filteredComment.append("*".repeat(word.length())).append(" ");
+                } else {
+                    filteredComment.append(word).append(" ");
+                }
+            }
+
+            int index = comments.indexOf(comment);
+            comments.set(index, filteredComment.toString().trim());
+        }
+
     }
-
-
 }
+
 
 

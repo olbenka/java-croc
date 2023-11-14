@@ -12,7 +12,7 @@ public class Main {
         comments.add("У меня нож тоже");
         comments.add("У меня с собой нож");
         comments.add("Ножницы есть?");
-        comments.add("I'm sad");
+        comments.add("I'm sad sad sad sad");
         comments.add("But you said it so sadly");
         comments.add("SAD");
         comments.add("Нож пропал");
@@ -24,7 +24,10 @@ public class Main {
         for (String comment : comments) {
             System.out.println(comment);
         }
-        commentFilter.filterComments(comments, blackList);
+        // удаление комментариев
+        // commentFilter.filterComments(comments, blackList);
+        // замена на звездочки
+        commentFilter.upgradeFilterComments(comments, blackList);
         System.out.println("-----------");
         System.out.println("Оставшиеся комментарии:");
         for (String comment : comments) {
