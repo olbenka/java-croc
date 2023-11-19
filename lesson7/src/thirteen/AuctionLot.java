@@ -19,6 +19,7 @@ public class AuctionLot {
         if (currentTime.isBefore(endTime) && (betPrice.compareTo(currentPrice) > 0)) {
             currentPrice = betPrice;
             participantName = bidderName;
+            System.out.println(participantName + " сделал(а) ставку: " + betPrice);
         }
     }
 
@@ -33,14 +34,5 @@ public class AuctionLot {
         } else {
             return " ";
         }
-    }
-
-    @Override
-    public String toString() {
-        return "AuctionLot{" +
-                "participantName='" + participantName + '\'' +
-                ", currentPrice=" + currentPrice +
-                ", endTime=" + endTime +
-                '}';
     }
 }
