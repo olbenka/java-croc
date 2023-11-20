@@ -41,6 +41,24 @@ public class TernaryOperator {
                 date -> "Прошлое"
         );
         System.out.println(res3);
+
+        // выделить приветствие
+        String changeString = "Hello, World!";
+        String res4 = ternaryOperator(
+                changeString,
+                s -> s.startsWith("Hello"),
+                String::toUpperCase,
+                String::toLowerCase
+        );
+
+        int number2 = -100;
+        int res5 = ternaryOperator(
+                number2,
+                x -> x > 0,
+                x -> x * 2,
+                x -> x / 2
+        );
+        System.out.println(res5);
     }
 
 }
