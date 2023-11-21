@@ -1,24 +1,20 @@
 package ten;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.function.Predicate;
 
 public interface BlackListFilter<T> {
-    default Collection<T> filterComments(Collection<T> comments, Predicate<T> predicate) {
-        Collection<T> filteredComments;
-
-        try {
-            filteredComments = comments.getClass().getDeclaredConstructor().newInstance();
-        } catch (ReflectiveOperationException e) {
-            throw new RuntimeException("Не удалось создать новый экземпляр типа коллекции.", e);
-        }
+    default Iterable<T> filterComments(Iterable<T> comments, Predicate<T> commentPredicate) {
+        ArrayList<T> filteredComments = new ArrayList<>();
 
         for (T comment : comments) {
-            if (predicate.test(comment)) {
+            if (commentPredicate.test(comment)) {
                 filteredComments.add(comment);
             }
         }
 
         return filteredComments;
     }
+
 }
