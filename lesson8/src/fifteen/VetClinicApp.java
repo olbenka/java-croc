@@ -9,7 +9,7 @@ import static fifteen.WorkWithDB.*;
 public class VetClinicApp {
     public static void main(String[] args) {
         String csvFilePath = args[0];
-        //String csvFilePath = "src/fifthteen/info.csv";
+        //String csvFilePath = "src/fifteen/info.csv";
         try (Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "")) {
             createTables(connection);
             importData(connection, csvFilePath);
