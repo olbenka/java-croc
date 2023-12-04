@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static fifteen.WorkWithDB.*;
+import static fifteen.DbCreator.*;
 
 public class VetClinicApp {
     public static void main(String[] args) {
